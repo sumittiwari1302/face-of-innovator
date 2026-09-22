@@ -7,7 +7,7 @@ import { Parallax, staggerParent } from "@/components/motion-reveal";
 import { FoiLockup } from "@/components/foi-logo";
 import { GithubIcon, InstagramIcon, LinkedinIcon, XIcon } from "@/components/social-icons";
 import Image from "next/image";
-import footerBg from "@/images/footer.jpeg";
+import footerBg from "@/images/home.jpeg";
 
 const socials = [
   { icon: LinkedinIcon, label: "LinkedIn", href: "#", hover: "hover:text-foi-blue" },
@@ -53,30 +53,30 @@ export default function Footer() {
           priority
           quality={90}
           sizes="100vw"
-          className="object-cover object-center opacity-15 contrast-110 saturate-105 brightness-110"
+          className="object-cover object-center opacity-20 contrast-110 saturate-105 brightness-110"
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(11,10,17,0.85) 0%, rgba(11,10,17,0.95) 30%, rgba(11,10,17,1) 100%)",
+              "linear-gradient(180deg, rgba(11,10,17,0.8) 0%, rgba(11,10,17,0.95) 40%, rgba(11,10,17,1) 100%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 60% 50% at 20% 20%, rgba(124,143,214,0.15) 0%, transparent 60%)",
+              "radial-gradient(ellipse 60% 50% at 20% 20%, rgba(124,143,214,0.12) 0%, transparent 60%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 50% 40% at 80% 80%, rgba(180,60,200,0.1) 0%, transparent 55%)",
+              "radial-gradient(ellipse 50% 40% at 80% 80%, rgba(180,60,200,0.08) 0%, transparent 55%)",
           }}
         />
-        <div className="noise-overlay opacity-40" />
+        <div className="noise-overlay opacity-30" />
       </div>
 
       <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-foi animate-gradient-x" />
