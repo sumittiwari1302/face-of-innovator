@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Face of Innovator | The Future of Collaborative Innovation</title>
+  <meta name="description"
+    content="Build the future of innovation with Face of Innovator. A high-performance innovation collective with no gatekeeping, just pure craft. Join the movement." />
+  <meta name="keywords"
+    content="Innovation, Face of Innovator, Tech Collective, Innovation Community, Startup Incubator, Fullstack Development, Three.js, WebGL" />
+  <meta name="author" content="Face of Innovator" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://faceofinnovator.vercel.app/" />
+  <meta property="og:title" content="Face of Innovator | The Future of Collaborative Innovation" />
+  <meta property="og:description"
+    content="Join the high-performance innovation collective. No gatekeeping, just pure craft. Build the future of innovation with us." />
+  <meta property="og:image" content="https://faceofinnovator.vercel.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://faceofinnovator.vercel.app/" />
+  <meta property="twitter:title" content="Face of Innovator | The Future of Collaborative Innovation" />
+  <meta property="twitter:description"
+    content="Join the high-performance innovation collective. No gatekeeping, just pure craft. Build the future of innovation with us." />
+  <meta property="twitter:image" content="https://faceofinnovator.vercel.app/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-outline" aria-hidden="true"></div>
+  <canvas class="webgl" aria-hidden="true"></canvas>
+  <svg id="data-leads" aria-hidden="true"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></svg>
+
+  <div id="gate-overlay">
+    <div class="gate-content">
+      <button id="start-btn">START EXPERIENCE</button>
+      <p class="gate-notice">USE LAPTOP OR PC FOR BEST EXPERIENCE</p>
+    </div>
+  </div>
+
+  <audio id="bg-music" src="/relaxing_space_music.mp3" loop preload="none" playsinline webkit-playsinline></audio>
+
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#hero" data-scroll aria-label="Face of Innovator home">
+      <svg viewBox="0 0 64 32" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+        <path d="M32 16C26 8 22 4 16 4a12 12 0 1 0 0 24c6 0 10-4 16-12s10-12 16-12a12 12 0 1 1 0 24c-6 0-10-4-16-12" />
+        <circle cx="32" cy="16" r="4" fill="currentColor"/>
+      </svg>
+      <span>Face of Innovator</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#proof" data-scroll>Proof</a>
+      <a href="https://github.com/face-of-innovator" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://discord.gg/faceofinnovator" target="_blank" rel="noopener" class="hide-mobile">Discord</a>
+    </nav>
+  </header>
+
+  <main id="app" style="opacity: 0; pointer-events: none;">
+    <section id="hero">
+      <div class="content active">
+        <div class="glass-card">
+          <a class="pill" href="https://kcdgujarat.com/#partners" target="_blank" rel="noopener">
+            <span class="dot" aria-hidden="true"></span>Community Partner · KCD Gujarat 2026
+          </a>
+          <h1>BUILD.<br>REIMAGINED.</h1>
+          <p>Drafting the future of innovation. No interviews. No gatekeeping. Just pure craft.</p>
+          <button class="next-section">START BUILDING</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="content wide">
+        <div class="glass-card proof-card">
+          <p class="eyebrow">Track record</p>
+          <h2>SHIPPED. NOT PROMISED.</h2>
+          <p class="lede">Everything we build is public. This is what the collective has put into the world so far, pulled live from GitHub.</p>
+
+          <ul class="stats" aria-label="Community statistics">
+            <li><span class="stat-num" data-live="prs">870+</span><span class="stat-label">Pull requests</span></li>
+            <li><span class="stat-num" data-live="forks">140+</span><span class="stat-label">Forks</span></li>
+            <li><span class="stat-num">80+</span><span class="stat-label">Contributors</span></li>
+            <li><span class="stat-num" data-live="stars">65</span><span class="stat-label">Stars</span></li>
+          </ul>
+
+          <div class="projects">
+            <a class="project" href="https://github.com/face-of-innovator/MergeShip" target="_blank" rel="noopener">
+              <div class="project-head">
+                <h3>MergeShip</h3>
+                <span class="tag">TypeScript</span>
+              </div>
+              <p>A gamified bridge into open source. Contributors swipe through issues and earn XP. Maintainers get an AI command center for triage, duplicate detection and repo health.</p>
+              <div class="badges"><span class="badge">100+ forks</span><span class="badge">80+ contributors</span></div>
+              <div class="project-meta">
+                <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .67.42l1.88 3.8 4.2.61a.75.75 0 0 1 .42 1.28l-3.04 2.96.72 4.18a.75.75 0 0 1-1.09.79L8 12.35l-3.76 1.97a.75.75 0 0 1-1.09-.79l.72-4.18L.83 6.36a.75.75 0 0 1 .42-1.28l4.2-.61L7.33.67A.75.75 0 0 1 8 .25Z"/></svg><b data-live="MergeShip:stars">24</b></span>
+                <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5 5.37v.62a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-.62a2.25 2.25 0 1 1 1.5 0v.62A3.5 3.5 0 0 1 9 9.5H8.75v1.13a2.25 2.25 0 1 1-1.5 0V9.5H7A3.5 3.5 0 0 1 3.5 6v-.63a2.25 2.25 0 1 1 1.5 0ZM4.25 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm7.5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM8 12.25a.75.75 0 1 0 0 1.5.75.75.75 0 0 0 0-1.5Z"/></svg><b data-live="MergeShip:forks">102</b></span>
+                <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>Repository</span>
+              </div>
+            </a>
+            <a class="project" href="https://github.com/face-of-innovator/Trajectory-IR" target="_blank" rel="noopener">
+              <div class="project-head">
+                <h3>Trajectory-IR</h3>
+                <span class="tag">Go</span>
+              </div>
+              <p>A portable, hash-verifiable intermediate representation for AI agent execution trajectories, built on durable backends like Temporal and DBOS.</p>
+              <div class="badges"><span class="badge">OpenSSF Best Practices · Passing</span><span class="badge">CNCF Sandbox candidate</span></div>
+              <div class="project-meta">
+                <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .67.42l1.88 3.8 4.2.61a.75.75 0 0 1 .42 1.28l-3.04 2.96.72 4.18a.75.75 0 0 1-1.09.79L8 12.35l-3.76 1.97a.75.75 0 0 1-1.09-.79l.72-4.18L.83 6.36a.75.75 0 0 1 .42-1.28l4.2-.61L7.33.67A.75.75 0 0 1 8 .25Z"/></svg><b data-live="Trajectory-IR:stars">22</b></span>
+                <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5 5.37v.62a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-.62a2.25 2.25 0 1 1 1.5 0v.62A3.5 3.5 0 0 1 9 9.5H8.75v1.13a2.25 2.25 0 1 1-1.5 0V9.5H7A3.5 3.5 0 0 1 3.5 6v-.63a2.25 2.25 0 1 1 1.5 0ZM4.25 2.5a.75.75 0 1 0 0 1.5.75.75.75 0 0 0 0-1.5Zm7.5 0a.75.75 0 1 0 0 1.5.75.75.75 0 0 0 0-1.5ZM8 12.25a.75.75 0 1 0 0 1.5.75.75.75 0 0 0 0-1.5Z"/></svg><b data-live="Trajectory-IR:forks">14</b></span>
+                <span><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>Repository</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="proof-footer">
+            <div class="partner-row">
+              <p class="eyebrow">Community partner</p>
+              <a href="https://kcdgujarat.com/#partners" target="_blank" rel="noopener">Kubernetes Community Days Gujarat&nbsp;2026&nbsp;↗</a>
+            </div>
+            <a class="ghost-button" href="https://github.com/face-of-innovator" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .67.42l1.88 3.8 4.2.61a.75.75 0 0 1 .42 1.28l-3.04 2.96.72 4.18a.75.75 0 0 1-1.09.79L8 12.35l-3.76 1.97a.75.75 0 0 1-1.09-.79l.72-4.18L.83 6.36a.75.75 0 0 1 .42-1.28l4.2-.61L7.33.67A.75.75 0 0 1 8 .25Z"/></svg>Explore on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="content">
+        <div class="glass-card">
+          <h2>BEYOND LABELS.</h2>
+          <p>We don't just build projects. We build the people who build them. Join our core collective.</p>
+          <button class="open-join">JOIN THE SQUAD</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="hiring">
+      <div class="content">
+        <div class="glass-card">
+          <h2>SYNCHRONIZE.</h2>
+          <p>Match your vision with global builders. Ideas shouldn't die in DMs—they should be compiled.</p>
+          <button id="open-idea-btn">SUBMIT IDEA</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="content">
+        <div class="glass-card">
+          <h2>THE COLLECTIVE.</h2>
+          <p>An open community built on collaboration over credentials. Everyone is welcome.</p>
+          <a href="https://discord.gg/faceofinnovator" target="_blank" class="glass-button">JOIN DISCORD</a>
+          <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem;">
+            <p style="font-size: 0.9rem; color: #888; margin-bottom: 0.5rem;">Or connect with us via email:</p>
+            <a href="mailto:hello@faceofinnovator.com"
+              style="color: #fff; text-decoration: none; font-weight: 500; font-size: 1.1rem; letter-spacing: 0.05em;">hello@faceofinnovator.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer">
+      <span>© 2026 Face of Innovator · Open source under MIT</span>
+      <nav aria-label="Footer">
+        <a href="https://github.com/face-of-innovator" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/face-of-innovator/face-of-innovator-site" target="_blank" rel="noopener">This site</a>
+        <a href="https://discord.gg/faceofinnovator" target="_blank" rel="noopener">Discord</a>
+        <a href="mailto:hello@faceofinnovator.com">Email</a>
+        <a href="https://kcdgujarat.com/#partners" target="_blank" rel="noopener">KCD Gujarat 2026</a>
+      </nav>
+    </footer>
+  </main>
+
+  <div id="join-overlay" class="join-overlay">
+    <div class="form-container">
+      <div class="form-scroll">
+        <h1>JOIN THE<br>COLLECTIVE.</h1>
+        <form id="join-form">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="full_name" placeholder="Full Name" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" name="phone" placeholder="+1 (555) 000-0000" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="email@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Branch / Department</label>
+            <input type="text" name="department" placeholder="e.g. Computer Science" />
+          </div>
+          <div class="form-group">
+            <label>Profiles</label>
+            <div class="profile-grid">
+              <input type="url" name="github" placeholder="GitHub" required />
+              <input type="url" name="linkedin" placeholder="LinkedIn (Optional)" />
+              <input type="url" name="coding" placeholder="Coding Profile (Optional)" />
+              <input type="url" name="portfolio" placeholder="Portfolio (Optional)" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>The finish line</label>
+            <textarea name="finished_story"
+              placeholder="Have you ever started something and not finished it? What happened?" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>The 30-day vision</label>
+            <textarea name="vision_story"
+              placeholder="If you had a team and zero restrictions for 30 days, what would you attempt?"
+              required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Proof of Craft</label>
+            <input type="url" name="build_link" placeholder="Share a link to something you've built" />
+          </div>
+          <p class="form-notice" style="font-size: 0.8rem; color: #aaa; margin-bottom: 1.5rem; line-height: 1.4;">
+            * Joining the Discord community is <strong>compulsory</strong> for application review.
+          </p>
+          <button type="submit" class="submit-btn" id="join-submit-btn">SUBMIT APPLICATION</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="idea-overlay" class="join-overlay">
+    <div class="form-container">
+      <div class="form-scroll">
+        <h1>SUBMIT<br>CONCEPT.</h1>
+        <form id="idea-form">
+          <div class="form-group">
+            <label>Project Title</label>
+            <input type="text" name="idea_title" placeholder="What's the name?" required />
+          </div>
+          <div class="form-group">
+            <label>The Problem</label>
+            <textarea name="problem_story" placeholder="What is the friction you're solving?" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>The Concept</label>
+            <textarea name="concept_story" placeholder="Describe the solution in its purest form." required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Potential Tech Stack (Optional)</label>
+            <input type="text" name="tech_stack" placeholder="e.g. Next.js, Rust, OpenCV" />
+          </div>
+          <div class="form-group">
+            <label>Your Contact</label>
+            <input type="text" name="contact_info" placeholder="Discord Username or Email" required />
+          </div>
+          <div class="form-group">
+            <label>Existing Work (Optional)</label>
+            <input type="url" name="github_link" placeholder="GitHub / Portfolio Link (Optional)" />
+          </div>
+          <p class="form-notice" style="font-size: 0.8rem; color: #aaa; margin-bottom: 1.5rem; line-height: 1.4;">
+            * Joining the Discord community is <strong>compulsory</strong> for concept review.
+          </p>
+          <button type="submit" class="submit-btn" id="idea-submit-btn">SUBMIT TO COLLECTIVE</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <button class="close-overlay close-join" id="close-join-btn" aria-label="Close recruitment form">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+
+  <button class="close-overlay close-idea" id="close-idea-btn" aria-label="Close idea submission">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+
+  <button id="music-toggle" class="audio-control" aria-label="Toggle Background Music"
+    style="opacity: 0; visibility: hidden; pointer-events: none;">
+    <svg class="volume-up" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    </svg>
+    <svg class="volume-x" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  </button>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

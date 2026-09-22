@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <defs>
+    <linearGradient id="foi-bolt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c8fd6"/>
+      <stop offset="0.5" stop-color="#9a8fc4"/>
+      <stop offset="1" stop-color="#86a2e6"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="92" height="92" rx="26" fill="#10122b"/>
+  <rect x="2" y="2" width="92" height="92" rx="26" fill="none" stroke="#7c8fd6" stroke-opacity="0.75" stroke-width="3"/>
+  <circle cx="38" cy="28" r="6.5" fill="#d6d2dd"/>
+  <circle cx="62" cy="28" r="6.5" fill="#d6d2dd"/>
+  <path d="M 44 38 H 70 L 52 74 H 66 L 42 92 L 54 62 H 34 Z" fill="url(#foi-bolt)"/>
+</svg>

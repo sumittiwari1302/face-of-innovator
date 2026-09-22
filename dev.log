@@ -1,0 +1,158 @@
+
+> face-of-innovator@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.12.112.147:3000
+✓ Ready in 833ms
+⚠ Warning: Next.js ignored package-lock.json in /Users/tiwarisumitmanoj because it is outside the current Git repository (/Users/tiwarisumitmanoj/face-of-innovator).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.ts took 243ms
+
+ GET / 200 in 1108ms (next.js: 344ms, application-code: 764ms)
+ GET / 200 in 798ms (next.js: 270ms, application-code: 528ms)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="page.tsx">
+      <SegmentTrieNode>
+      <Home>
+        <main className="flex flex-...">
+          <SiteNav>
+          <Hero>
+          <UpcomingEvent>
+            <section id="event" className="py-20 bg-s...">
+              <div className="max-w-7xl ...">
+                <motion.div className="relative r..." initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} ...>
+                  <div className="relative r..." style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+                    <div>
+                    <div>
+                    <div>
+                    <div>
+                    <div className="relative g...">
+                      <div>
+                      <div className="lg:col-spa...">
+                        <div className="glass bg-w...">
+                          <div>
+                          <div className="grid grid-...">
+                            <div>
+                            <div>
+                            <div>
+                            <div className="text-cente...">
+                              <div className="font-heading font-black text-3xl md:text-4xl text-shimmer tabular-nums">
++                               37
+-                               38
+                              ...
+                        ...
+          ...
+    ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at <unknown> (src/components/upcoming-event.tsx:131:23)
+    at Array.map (<anonymous>)
+    at UpcomingEvent (src/components/upcoming-event.tsx:126:26)
+    at Home (src/app/page.tsx:27:7)
+  129 |                       className="text-center bg-foi-blue/60 border border-white/15 rounded-2xl py-4"
+  130 |                     >
+> 131 |                       <div className="font-heading font-black text-3xl md:text-4xl text-shimmer tabular-nums">
+      |                       ^
+  132 |                         {String(value).padStart(2, "0")}
+  133 |                       </div>
+  134 |                       <div className="font-mono text-[9px] font-black uppercase tracking-widest text-white/50 mt-1">
+[browser] Image with src "/_next/static/media/home.3tv-f5kxirx1e.jpeg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[browser] Image with src "/_next/static/media/gallery.1fl8ndv1wntcz.jpeg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[browser] Image with src "/_next/static/media/member-of-foi-hd.364nmm40o437b.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+✓ Compiled in 1375ms
+ GET / 200 in 121ms (next.js: 34ms, application-code: 87ms)
+ GET / 200 in 410ms (next.js: 263ms, application-code: 148ms)
+ GET / 200 in 337ms (next.js: 11ms, application-code: 326ms)
+ GET / 200 in 200ms (next.js: 4ms, application-code: 197ms)
+ GET / 200 in 198ms (next.js: 7ms, application-code: 192ms)
+ GET / 200 in 257ms (next.js: 4ms, application-code: 253ms)
+ GET / 200 in 183ms (next.js: 3ms, application-code: 180ms)
+ GET / 200 in 314ms (next.js: 3ms, application-code: 312ms)
+ GET / 200 in 1069ms (next.js: 33ms, application-code: 1036ms)
+[browser] Image with src "/_next/static/media/gallery.1fl8ndv1wntcz.jpeg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[browser] Image with src "/_next/static/media/home.3tv-f5kxirx1e.jpeg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[browser] Image with src "/_next/static/media/member-of-foi-hd.364nmm40o437b.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="page.tsx">
+      <SegmentTrieNode>
+      <Home>
+        <main className="flex flex-...">
+          <SiteNav>
+          <Hero>
+          <UpcomingEvent>
+            <section id="event" className="py-20 bg-s...">
+              <div className="max-w-7xl ...">
+                <motion.div className="relative r..." initial={{opacity:0,y:40}} whileInView={{opacity:1,y:0}} ...>
+                  <div className="relative r..." style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+                    <div>
+                    <div>
+                    <div>
+                    <div>
+                    <div className="relative g...">
+                      <div>
+                      <div className="lg:col-spa...">
+                        <div className="glass bg-w...">
+                          <div>
+                          <div className="grid grid-...">
+                            <div>
+                            <div>
+                            <div>
+                            <div className="text-cente...">
+                              <div className="font-heading font-black text-3xl md:text-4xl text-shimmer tabular-nums">
++                               49
+-                               50
+                              ...
+                        ...
+                ...
+          ...
+    ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at div (<anonymous>)
+    at <unknown> (src/components/upcoming-event.tsx:189:23)
+    at Array.map (<anonymous>)
+    at UpcomingEvent (src/components/upcoming-event.tsx:184:26)
+    at Home (src/app/page.tsx:27:7)
+  187 |                       className="text-center bg-foi-blue/60 border border-white/15 rounded-2xl py-4"
+  188 |                     >
+> 189 |                       <div className="font-heading font-black text-3xl md:text-4xl text-shimmer tabular-nums">
+      |                       ^
+  190 |                         {String(value).padStart(2, "0")}
+  191 |                       </div>
+  192 |                       <div className="font-mono text-[9px] font-black uppercase tracking-widest text-white/50 mt-1">
+✓ Compiled in 507ms
+ GET / 200 in 94ms (next.js: 24ms, application-code: 70ms)
+✓ Compiled in 1108ms
+ GET / 200 in 48ms (next.js: 8ms, application-code: 40ms)
+✓ Compiled in 124ms
+ GET / 200 in 116ms (next.js: 40ms, application-code: 77ms)
+✓ Compiled in 194ms
+ GET / 200 in 270ms (next.js: 87ms, application-code: 183ms)
