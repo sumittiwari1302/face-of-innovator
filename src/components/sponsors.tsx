@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import pwLogo from "@/images/pw-logo.png";
-import pwIoiLogo from "@/images/pwioi.jpg";
+import whycodeLogo from "@/images/whycode_logo.png";
 
 export default function Sponsors() {
   return (
@@ -40,48 +40,25 @@ export default function Sponsors() {
           viewport={{ once: true }}
         >
           <div className="text-xs font-mono font-black text-slate-400 uppercase tracking-widest mb-4">
-            Venue Partners
+            Venue Partner
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="gradient-border rounded-3xl group bg-white">
-              <div className="relative h-36 rounded-3xl flex items-center gap-5 md:gap-9 px-6 md:px-12 overflow-hidden">
-                <div className="absolute inset-0 bg-dots opacity-20 group-hover:opacity-40 transition-opacity" />
-                <div className="relative shrink-0 w-32 h-20 md:w-44 md:h-24 rounded-2xl bg-white border-2 border-foi-light-blue/40 flex items-center justify-center shadow-[6px_6px_0_rgba(124,143,214,0.3)] group-hover:rotate-2 group-hover:scale-[1.04] transition-transform duration-300 overflow-hidden">
-                  <Image
-                    src={pwLogo}
-                    alt="PW Institute of Innovation"
-                    width={148}
-                    height={152}
-                    priority
-                    quality={95}
-                    className="object-contain w-full h-full p-3 md:p-4"
-                  />
-                </div>
-                <div className="relative">
-                  <div className="font-heading font-bold text-xl md:text-2xl text-slate-900 group-hover:text-foi-blue transition-colors tracking-tight">
-                    PW Institute of Innovation
-                  </div>
-                </div>
+          <div className="gradient-border rounded-3xl group bg-white max-w-md">
+            <div className="relative h-36 rounded-3xl flex items-center gap-5 md:gap-9 px-6 md:px-12 overflow-hidden">
+              <div className="absolute inset-0 bg-dots opacity-20 group-hover:opacity-40 transition-opacity" />
+              <div className="relative shrink-0 w-32 h-20 md:w-44 md:h-24 rounded-2xl bg-white border-2 border-foi-light-blue/40 flex items-center justify-center shadow-[6px_6px_0_rgba(124,143,214,0.3)] group-hover:rotate-2 group-hover:scale-[1.04] transition-transform duration-300 overflow-hidden">
+                <Image
+                  src={pwLogo}
+                  alt="PW Institute of Innovation"
+                  width={148}
+                  height={152}
+                  priority
+                  quality={95}
+                  className="object-contain w-full h-full p-3 md:p-4"
+                />
               </div>
-            </div>
-            <div className="gradient-border rounded-3xl group bg-white">
-              <div className="relative h-36 rounded-3xl flex items-center gap-5 md:gap-9 px-6 md:px-12 overflow-hidden">
-                <div className="absolute inset-0 bg-dots opacity-20 group-hover:opacity-40 transition-opacity" />
-                <div className="relative shrink-0 w-32 h-20 md:w-44 md:h-24 rounded-2xl bg-white border-2 border-foi-fuchsia/40 flex items-center justify-center shadow-[6px_6px_0_rgba(180,60,200,0.3)] group-hover:rotate-2 group-hover:scale-[1.04] transition-transform duration-300 overflow-hidden">
-                  <Image
-                    src={pwIoiLogo}
-                    alt="Pune Tech Club"
-                    width={148}
-                    height={152}
-                    priority
-                    quality={95}
-                    className="object-contain w-full h-full p-3 md:p-4"
-                  />
-                </div>
-                <div className="relative">
-                  <div className="font-heading font-bold text-xl md:text-2xl text-slate-900 group-hover:text-foi-fuchsia transition-colors tracking-tight">
-                    Pune Tech Club
-                  </div>
+              <div className="relative">
+                <div className="font-heading font-bold text-xl md:text-2xl text-slate-900 group-hover:text-foi-blue transition-colors tracking-tight">
+                  PW Institute of Innovation
                 </div>
               </div>
             </div>
@@ -97,15 +74,23 @@ export default function Sponsors() {
           <div className="text-xs font-mono font-black text-slate-400 uppercase tracking-widest mb-4">
             Title Partner
           </div>
-          <div className="gradient-border rounded-3xl group">
-            <div className="relative h-32 rounded-3xl flex items-center justify-center overflow-hidden">
+          <div className="gradient-border rounded-3xl group bg-white">
+            <div className="relative h-36 rounded-3xl flex items-center gap-5 md:gap-9 px-6 md:px-12 overflow-hidden">
               <div className="absolute inset-0 bg-dots opacity-20 group-hover:opacity-40 transition-opacity" />
-              <div className="relative text-center">
-                <div className="font-heading font-bold text-2xl text-slate-300 group-hover:text-foi-blue transition-colors">
-                  Your Logo Here
-                </div>
-                <div className="font-mono text-[10px] font-black uppercase tracking-widest text-slate-300 group-hover:text-foi-red transition-colors mt-1">
-                  The room is yours — claim it
+              <div className="relative shrink-0 w-32 h-20 md:w-44 md:h-24 rounded-2xl bg-white border-2 border-foi-yellow/40 flex items-center justify-center shadow-[6px_6px_0_rgba(255,210,0,0.3)] group-hover:rotate-2 group-hover:scale-[1.04] transition-transform duration-300 overflow-hidden">
+                <Image
+                  src={whycodeLogo}
+                  alt="WhyCode_4U"
+                  width={148}
+                  height={152}
+                  priority
+                  quality={95}
+                  className="object-contain w-full h-full p-3 md:p-4"
+                />
+              </div>
+              <div className="relative">
+                <div className="font-heading font-bold text-xl md:text-2xl text-slate-900 group-hover:text-foi-yellow transition-colors tracking-tight">
+                  WhyCode_4U
                 </div>
               </div>
             </div>
