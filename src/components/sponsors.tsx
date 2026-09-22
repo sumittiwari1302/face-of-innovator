@@ -61,13 +61,6 @@ export default function Sponsors() {
                   <div className="font-heading font-bold text-xl md:text-2xl text-slate-900 group-hover:text-foi-blue transition-colors tracking-tight">
                     PW Institute of Innovation
                   </div>
-                  <div className="font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.22em] text-foi-red mt-1">
-                    Hosting the room · Pune
-                  </div>
-                </div>
-                <div className="relative hidden md:flex items-center gap-2 ml-auto font-mono text-[10px] font-black uppercase tracking-widest text-slate-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-foi-light-blue animate-pulse" />
-                  Venue confirmed
                 </div>
               </div>
             </div>
@@ -77,7 +70,7 @@ export default function Sponsors() {
                 <div className="relative shrink-0 w-32 h-20 md:w-44 md:h-24 rounded-2xl bg-white border-2 border-foi-fuchsia/40 flex items-center justify-center shadow-[6px_6px_0_rgba(180,60,200,0.3)] group-hover:rotate-2 group-hover:scale-[1.04] transition-transform duration-300 overflow-hidden">
                   <Image
                     src={pwIoiLogo}
-                    alt="PW IOI Pune Tech Club"
+                    alt="Pune Tech Club"
                     width={148}
                     height={152}
                     priority
@@ -87,15 +80,8 @@ export default function Sponsors() {
                 </div>
                 <div className="relative">
                   <div className="font-heading font-bold text-xl md:text-2xl text-slate-900 group-hover:text-foi-fuchsia transition-colors tracking-tight">
-                    PW IOI Pune Tech Club
+                    Pune Tech Club
                   </div>
-                  <div className="font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.22em] text-foi-red mt-1">
-                    Community Partner · Pune
-                  </div>
-                </div>
-                <div className="relative hidden md:flex items-center gap-2 ml-auto font-mono text-[10px] font-black uppercase tracking-widest text-slate-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-foi-fuchsia animate-pulse" />
-                  Partner confirmed
                 </div>
               </div>
             </div>
