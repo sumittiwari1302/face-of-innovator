@@ -173,3 +173,8 @@ https://react.dev/link/hydration-mismatch
  GET / 200 in 855ms (next.js: 28ms, application-code: 827ms)
 ✓ Compiled in 402ms
  GET / 200 in 62ms (next.js: 13ms, application-code: 49ms)
+[browser] Image with src "/_next/static/media/gallery.1fl8ndv1wntcz.jpeg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[browser] Image with src "/_next/static/media/home.3tv-f5kxirx1e.jpeg" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[browser] Image with src "/_next/static/media/member-of-foi-hd.364nmm40o437b.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+✓ Compiled in 700ms
+ GET / 200 in 180ms (next.js: 100ms, application-code: 80ms)
