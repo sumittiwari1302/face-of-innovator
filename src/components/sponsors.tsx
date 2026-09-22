@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import pwLogo from "@/images/pw-logo.png";
+import pwIoiLogo from "@/images/pwioi.jpg";
 
 export default function Sponsors() {
   return (
@@ -39,33 +40,63 @@ export default function Sponsors() {
           viewport={{ once: true }}
         >
           <div className="text-xs font-mono font-black text-slate-400 uppercase tracking-widest mb-4">
-            Venue Partner
+            Venue Partners
           </div>
-          <div className="gradient-border rounded-3xl group bg-white">
-            <div className="relative h-36 rounded-3xl flex items-center gap-5 md:gap-9 px-6 md:px-12 overflow-hidden">
-              <div className="absolute inset-0 bg-dots opacity-20 group-hover:opacity-40 transition-opacity" />
-              <div className="relative shrink-0 w-32 h-20 md:w-44 md:h-24 rounded-2xl bg-white border-2 border-foi-light-blue/40 flex items-center justify-center shadow-[6px_6px_0_rgba(124,143,214,0.3)] group-hover:rotate-2 group-hover:scale-[1.04] transition-transform duration-300 overflow-hidden">
-                <Image
-                  src={pwLogo}
-                  alt="PW Institute of Innovation"
-                  width={148}
-                  height={152}
-                  priority
-                  quality={95}
-                  className="object-contain w-full h-full p-3 md:p-4"
-                />
-              </div>
-              <div className="relative">
-                <div className="font-heading font-bold text-xl md:text-2xl text-slate-900 group-hover:text-foi-blue transition-colors tracking-tight">
-                  PW Institute of Innovation
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="gradient-border rounded-3xl group bg-white">
+              <div className="relative h-36 rounded-3xl flex items-center gap-5 md:gap-9 px-6 md:px-12 overflow-hidden">
+                <div className="absolute inset-0 bg-dots opacity-20 group-hover:opacity-40 transition-opacity" />
+                <div className="relative shrink-0 w-32 h-20 md:w-44 md:h-24 rounded-2xl bg-white border-2 border-foi-light-blue/40 flex items-center justify-center shadow-[6px_6px_0_rgba(124,143,214,0.3)] group-hover:rotate-2 group-hover:scale-[1.04] transition-transform duration-300 overflow-hidden">
+                  <Image
+                    src={pwLogo}
+                    alt="PW Institute of Innovation"
+                    width={148}
+                    height={152}
+                    priority
+                    quality={95}
+                    className="object-contain w-full h-full p-3 md:p-4"
+                  />
                 </div>
-                <div className="font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.22em] text-foi-red mt-1">
-                  Hosting the room · Pune
+                <div className="relative">
+                  <div className="font-heading font-bold text-xl md:text-2xl text-slate-900 group-hover:text-foi-blue transition-colors tracking-tight">
+                    PW Institute of Innovation
+                  </div>
+                  <div className="font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.22em] text-foi-red mt-1">
+                    Hosting the room · Pune
+                  </div>
+                </div>
+                <div className="relative hidden md:flex items-center gap-2 ml-auto font-mono text-[10px] font-black uppercase tracking-widest text-slate-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-foi-light-blue animate-pulse" />
+                  Venue confirmed
                 </div>
               </div>
-              <div className="relative hidden md:flex items-center gap-2 ml-auto font-mono text-[10px] font-black uppercase tracking-widest text-slate-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-foi-light-blue animate-pulse" />
-                Venue confirmed
+            </div>
+            <div className="gradient-border rounded-3xl group bg-white">
+              <div className="relative h-36 rounded-3xl flex items-center gap-5 md:gap-9 px-6 md:px-12 overflow-hidden">
+                <div className="absolute inset-0 bg-dots opacity-20 group-hover:opacity-40 transition-opacity" />
+                <div className="relative shrink-0 w-32 h-20 md:w-44 md:h-24 rounded-2xl bg-white border-2 border-foi-fuchsia/40 flex items-center justify-center shadow-[6px_6px_0_rgba(180,60,200,0.3)] group-hover:rotate-2 group-hover:scale-[1.04] transition-transform duration-300 overflow-hidden">
+                  <Image
+                    src={pwIoiLogo}
+                    alt="PW IOI Pune Tech Club"
+                    width={148}
+                    height={152}
+                    priority
+                    quality={95}
+                    className="object-contain w-full h-full p-3 md:p-4"
+                  />
+                </div>
+                <div className="relative">
+                  <div className="font-heading font-bold text-xl md:text-2xl text-slate-900 group-hover:text-foi-fuchsia transition-colors tracking-tight">
+                    PW IOI Pune Tech Club
+                  </div>
+                  <div className="font-mono text-[10px] md:text-[11px] font-black uppercase tracking-[0.22em] text-foi-red mt-1">
+                    Community Partner · Pune
+                  </div>
+                </div>
+                <div className="relative hidden md:flex items-center gap-2 ml-auto font-mono text-[10px] font-black uppercase tracking-widest text-slate-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-foi-fuchsia animate-pulse" />
+                  Partner confirmed
+                </div>
               </div>
             </div>
           </div>

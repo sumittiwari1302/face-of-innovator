@@ -13,36 +13,23 @@ const EVENT = {
   duration: "12-Hour Hackathon (9H Offline Build)",
   venue: "Pune",
   description:
-    "WhyCode4U presents — BUILD SOMETHING Hackathon\n\n" +
-    "Got an idea that can solve a real-world problem?\n" +
-    "Turn your idea into reality and compete with bright minds from across the country!\n\n" +
+    "Got an idea that can solve a real-world problem? Turn it into reality and compete with bright minds across India!\n\n" +
     "TOTAL PRIZE POOL: ₹50,000\n" +
     "• 1st Prize — ₹25,000\n" +
     "• 2nd Prize — ₹15,000\n" +
     "• 3rd Prize — ₹10,000\n\n" +
-    "Location: Pune\n" +
-    "12-Hour Hackathon (9H Offline Build)\n" +
-    "Registration: FREE\n\n" +
-    "What's waiting for you?\n" +
-    "• Real-world problems\n" +
-    "• Mentorship & support\n" +
-    "• Meet brilliant minds\n" +
-    "• Exciting prizes\n" +
-    "• Build. Ship. Stand Out.\n\n" +
-    "2 Rounds\n\n" +
-    "ROUND 1 — ONLINE\n" +
-    "Submit your PPT → Get shortlisted\n\n" +
-    "ROUND 2 — OFFLINE\n" +
-    "Build → Demonstrate → Bring your idea to life!",
+    "📍 Pune | ⏱️ 12-Hour (9H Offline Build) | 💰 FREE Registration\n\n" +
+    "What's waiting: Real-world problems • Mentorship • Meet brilliant minds • Exciting prizes • Build. Ship. Stand Out.\n\n" +
+    "2 Rounds: ROUND 1 — ONLINE (Submit PPT → Get shortlisted) | ROUND 2 — OFFLINE (Build → Demo → Win)",
   registerUrl: "https://unstop.com/hackathons/whycode4u-build-something-hackathon",
   target: new Date("2026-10-31T09:00:00+05:30").getTime(),
 };
 
 const meta = [
   { icon: CalendarDays, label: "Date", value: "31 OCT 2026", color: "text-foi-yellow" },
-  { icon: Clock, label: "Duration", value: "12-Hour (9H Build)", color: "text-foi-light-blue" },
+  { icon: Clock, label: "Duration", value: "12H (9H Build)", color: "text-foi-light-blue" },
   { icon: MapPin, label: "Venue", value: "Pune", color: "text-foi-fuchsia" },
-  { icon: Ticket, label: "Passes", value: "Free · Limited seats", color: "text-foi-yellow" },
+  { icon: Ticket, label: "Passes", value: "Free", color: "text-foi-yellow" },
 ];
 
 const timeline = [
