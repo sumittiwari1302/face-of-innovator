@@ -3,20 +3,20 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import avatarRehan from "@/images/avatars/rehan.png";
+import avatarRehan from "@/images/avatars/rehan.jpg";
 import avatarSumit from "@/images/avatars/sumit.png";
-import avatarNisha from "@/images/avatars/nisha.png";
+import avatarNisha from "@/images/avatars/nishaa.png";
 import avatarYashraj from "@/images/avatars/yashraj.png";
 import avatarAditya from "@/images/avatars/aditya.png";
 
 const team = [
   {
     number: "01",
-    avatar: avatarNisha,
+    avatar: avatarRehan,
     name: "Rehan Azim",
     role: "President",
     quote:
-      "FOI started as a late-night idea in a Pune room. Today it's a movement — but the mission hasn't changed: real code, real ships.",
+      "FOI started as a late-night idea in a Pune room. Today it's a movement - but the mission hasn't changed: real code, real ships.",
     node: "border-foi-red",
   },
   {
@@ -25,16 +25,16 @@ const team = [
     name: "Sumit Tiwari",
     role: "Vice President",
     quote:
-      "Our job isn't to teach — it's to remove every wall between a student and the thing they're building. The room does the rest.",
+      "Our job isn't to teach - it's to remove every wall between a student and the thing they're building. The room does the rest.",
     node: "border-foi-light-blue",
   },
   {
     number: "03",
-    avatar: avatarRehan,
-    name: "Nisha Ma'am",
+    avatar: avatarNisha,
+    name: "Nisha Chaube",
     role: "Tech Club Lead · PW IOI",
     quote:
-      "FOI exists because someone held the door open. We keep doing that — one build night at a time.",
+      "FOI exists because someone held the door open. We keep doing that - one build night at a time.",
     node: "border-foi-fuchsia",
   },
   {
@@ -43,7 +43,7 @@ const team = [
     name: "Yashraj",
     role: "Lead Organizer",
     quote:
-      "Every hack, every demo, every burnt-down server is part of the story. That's the point — we show up, we ship.",
+      "Every hack, every demo, every burnt-down server is part of the story. That's the point - we show up, we ship.",
     node: "border-foi-yellow",
   },
   {
@@ -52,7 +52,7 @@ const team = [
     name: "Aditya",
     role: "Core Organizer",
     quote:
-      "The best thing about the room is the door is always open. Someone new walks in every build night — and they leave shipping.",
+      "The best thing about the room is the door is always open. Someone new walks in every build night - and they leave shipping.",
     node: "border-foi-red",
   },
 ];
@@ -131,7 +131,7 @@ export default function Founders() {
                   {member.role}
                 </p>
                 <p className="text-slate-700 font-medium text-[15px] leading-relaxed flex-1 min-h-[120px]">
-                  &ldquo;{member.quote}&rdquo;
+                  &quot;{member.quote}&quot;
                 </p>
               </div>
 

@@ -25,8 +25,6 @@ const steps = [
   },
 ];
 
-const bars = [62, 38, 84, 55, 91, 47, 72, 66];
-
 const item = {
   hidden: { opacity: 0, y: 30 },
   show: {
@@ -120,7 +118,7 @@ export default function Ambassadors() {
             </Button>
             <span className="inline-flex items-center gap-2 font-mono text-[11px] font-black uppercase tracking-widest text-slate-400">
               <MapPin size={13} className="text-foi-red" />
-              12 campuses already live
+              Campuses across Pune
             </span>
           </motion.div>
         </div>
@@ -143,38 +141,26 @@ export default function Ambassadors() {
                 <span className="w-2 h-2 rounded-full bg-foi-light-blue animate-pulse" />
               </div>
 
-              <div className="flex items-end gap-2 h-32">
-                {bars.map((h, i) => (
-                  <motion.span
-                    key={i}
-                    className="flex-1 rounded-t-md bg-gradient-to-t from-foi-red to-foi-light-blue"
-                    initial={{ height: "8%" }}
-                    whileInView={{ height: `${h}%` }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.9,
-                      delay: 0.2 + i * 0.06,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                  />
-                ))}
-              </div>
-
-              <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
-                <div>
-                  <div className="font-mono text-[9px] font-black uppercase tracking-widest text-white/50">
-                    active chapters
+              <div className="text-center py-8">
+                <p className="text-white/70 font-medium mb-4">
+                  Building chapters across Pune campuses
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white/10 rounded-2xl p-6">
+                    <div className="font-heading font-black text-3xl text-white">
+                      12+
+                    </div>
+                    <div className="font-mono text-[9px] font-black uppercase tracking-widest text-white/50">
+                      Active Chapters
+                    </div>
                   </div>
-                  <div className="font-heading font-black text-3xl text-white">
-                    12<span className="text-foi-yellow">+</span>
-                  </div>
-                </div>
-                <div>
-                  <div className="font-mono text-[9px] font-black uppercase tracking-widest text-white/50">
-                    members
-                  </div>
-                  <div className="font-heading font-black text-3xl text-white">
-                    3.2k<span className="text-foi-yellow">+</span>
+                  <div className="bg-white/10 rounded-2xl p-6">
+                    <div className="font-heading font-black text-3xl text-white">
+                      1000+
+                    </div>
+                    <div className="font-mono text-[9px] font-black uppercase tracking-widest text-white/50">
+                      Community Members
+                    </div>
                   </div>
                 </div>
               </div>

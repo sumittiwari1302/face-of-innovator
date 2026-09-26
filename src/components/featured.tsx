@@ -5,9 +5,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Cloud, MessageSquare, Sofa } from "lucide-react";
 import Image from "next/image";
 import { GithubIcon, LinkedinIcon, XIcon } from "@/components/social-icons";
-import avatarRehan from "@/images/avatars/rehan.png";
+import avatarRehan from "@/images/avatars/rehan.jpg";
 import avatarSumit from "@/images/avatars/sumit.png";
-import avatarNisha from "@/images/avatars/nisha.png";
+import avatarNisha from "@/images/avatars/nishaa.png";
 import avatarYashraj from "@/images/avatars/yashraj.png";
 import avatarAditya from "@/images/avatars/aditya.png";
 
@@ -15,7 +15,7 @@ const team = [
   {
     name: "Rehan Azim",
     role: "President",
-    avatar: avatarNisha,
+    avatar: avatarRehan,
     quote:
       "FOI gives students everything they need to just build. High-energy meetups, hands-on mentorship, and zero judgment.",
   },
@@ -27,9 +27,9 @@ const team = [
       "Every workshop and hack night is designed for absolute focus. You leave with something shipped, not just notes.",
   },
   {
-    name: "Nisha Ma'am",
+    name: "Nisha Chaube",
     role: "Tech Club Lead · PW IOI",
-    avatar: avatarRehan,
+    avatar: avatarNisha,
     quote:
       "From venues to swag, we sweat the details so students can show up and dream big. It's a movement, not a lecture.",
   },
@@ -151,7 +151,7 @@ export default function Featured() {
                   transition={{ duration: 0.3 }}
                 >
                   <p className="text-xl text-slate-700 font-medium leading-relaxed mb-7">
-                    &ldquo;{member.quote}&rdquo;
+                    &quot;{member.quote}&quot;
                   </p>
                   <footer className="flex items-center gap-4">
                     <div className="relative w-14 h-14 rounded-full overflow-hidden ring-[3px] ring-foi-fuchsia/60 shadow-[3px_3px_0_rgba(154,143,196,0.4)] shrink-0">

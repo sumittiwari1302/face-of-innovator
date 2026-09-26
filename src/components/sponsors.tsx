@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import pwLogo from "@/images/pw-logo.png";
+import pwLogo from "@/images/pwioi.jpg";
 import whycodeLogo from "@/images/whycode_logo.png";
 
 export default function Sponsors() {

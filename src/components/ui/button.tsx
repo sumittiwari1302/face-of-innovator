@@ -47,7 +47,7 @@ export function Button({
   children,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 font-bold font-heading rounded-xl border-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer active:translate-y-0.5 shadow-[3px_3px_0_rgba(124,143,214,0.25)] hover:shadow-[1px_1px_0_rgba(124,143,214,0.25)]",
+    "inline-flex items-center justify-center gap-2 font-bold font-heading rounded-lg border-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer active:translate-y-0.5 shadow-[3px_3px_0_rgba(124,143,214,0.25)] hover:shadow-[1px_1px_0_rgba(124,143,214,0.25)]",
     variantClasses[variant],
     sizeClasses[size],
     className,

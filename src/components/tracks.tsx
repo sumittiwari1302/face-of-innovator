@@ -78,7 +78,7 @@ export default function Tracks() {
             </h2>
           </div>
           <p className="lg:col-span-5 text-lg text-slate-600 font-medium lg:text-right lg:pb-3">
-            Six ways to play — or mix them and build something completely
+            Six ways to play - or mix them and build something completely
             unique.
           </p>
         </div>
@@ -111,7 +111,7 @@ export default function Tracks() {
 
               <p className="text-lg text-slate-600 font-medium leading-relaxed max-w-xl mb-8">
                 Build intelligent systems, LLM wrappers, and autonomous agents
-                that do real work. Our most crowded room — bring your wildest
+                that do real work. Our most crowded room - bring your wildest
                 idea.
               </p>
 

@@ -3,9 +3,8 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import Image from "next/image";
-import home from "@/images/home.jpeg";
+import home from "@/images/home-hero.png";
 import galleryImg from "@/images/gallery.jpeg";
-import { Parallax } from "@/components/motion-reveal";
 
 const tiles = [
   {
@@ -84,7 +83,7 @@ export default function Gallery() {
             <span className="text-shimmer">IRL.</span>
             <br />
             <span className="text-xl md:text-2xl font-bold text-slate-600 mt-4 block">
-              Same couch, same energy — every single build night.
+              Same couch, same energy - every single build night.
             </span>
           </motion.h2>
 
@@ -115,7 +114,6 @@ export default function Gallery() {
               variants={item}
               className={tile.big ? "md:col-span-2 row-span-2" : ""}
             >
-              <Parallax distance={tile.big ? 24 : 40}>
                 <div
                   className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white shadow-[14px_14px_0_rgba(11,10,17,0.35)] transition-all duration-500 hover:-translate-y-1.5`}
                   style={{ transform: `rotate(${tile.rotate}deg)` }}
@@ -179,7 +177,6 @@ export default function Gallery() {
                     </span>
                   </div>
                 </div>
-              </Parallax>
             </motion.div>
           ))}
         </motion.div>

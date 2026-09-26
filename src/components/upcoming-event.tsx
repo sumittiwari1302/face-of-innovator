@@ -6,21 +6,14 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const EVENT = {
-  title: "WhyCode4U presents — BUILD SOMETHING Hackathon",
+  title: "WhyCode4U presents - BUILD SOMETHING Hackathon",
   tagline: "BUILD SOMETHING THAT DIDN'T EXIST YESTERDAY!",
   date: "31 OCTOBER 2026",
   time: "9:00 AM – 9:00 PM IST",
   duration: "12-Hour Hackathon (9H Offline Build)",
   venue: "Pune",
   description:
-    "Got an idea that can solve a real-world problem? Turn it into reality and compete with bright minds across India!\n\n" +
-    "TOTAL PRIZE POOL: ₹50,000\n" +
-    "• 1st Prize — ₹25,000\n" +
-    "• 2nd Prize — ₹15,000\n" +
-    "• 3rd Prize — ₹10,000\n\n" +
-    "📍 Pune | ⏱️ 12-Hour (9H Offline Build) | 💰 FREE Registration\n\n" +
-    "What's waiting: Real-world problems • Mentorship • Meet brilliant minds • Exciting prizes • Build. Ship. Stand Out.\n\n" +
-    "2 Rounds: ROUND 1 — ONLINE (Submit PPT → Get shortlisted) | ROUND 2 — OFFLINE (Build → Demo → Win)",
+    "Solve real-world problems, compete with India's brightest minds. 50K prize pool - 1st 25K, 2nd 15K, 3rd 10K. Pune | 12H (9H build) | Free entry. Real problems, mentorship, prizes. Build. Ship. Win. 2 rounds: Online PPT -> Offline build & demo.",
   registerUrl: "https://unstop.com/hackathons/whycode4u-build-something-hackathon",
   target: new Date("2026-10-31T09:00:00+05:30").getTime(),
 };
@@ -75,17 +68,11 @@ function useCountdown(target: number) {
     if (typeof window !== "undefined") return Date.now();
     return target;
   });
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
   }, []);
-
-  if (!mounted) {
-    return { d: 0, h: 0, m: 0, s: 0 };
-  }
 
   const diff = Math.max(0, target - now);
   return {

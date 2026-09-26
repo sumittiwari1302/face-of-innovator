@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Check, Clock, Mail, MapPin, Users } from "lucide-react";
+import { ArrowRight, Check, Clock, Mail, MapPin, Users, Loader2, AlertCircle } from "lucide-react";
 import { useState } from "react";
 
 const roles = [
@@ -16,14 +16,50 @@ const slots = [
   { id: "fullday", label: "Full 12 hours" },
 ];
 
+function getUTMParams() {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+  const utmParams: Record<string, string> = {};
+  ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((key) => {
+    const value = params.get(key);
+    if (value) utmParams[key] = value;
+  });
+  return utmParams;
+}
+
 export default function ContactForm() {
   const [role, setRole] = useState("student");
   const [slot, setSlot] = useState("fullday");
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
+    setStatus("loading");
+    setErrorMessage("");
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+    const utmParams = getUTMParams();
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, ...utmParams }),
+      });
+
+      if (!response.ok) throw new Error("Failed to submit");
+      setStatus("success");
+    } catch {
+      setStatus("error");
+      setErrorMessage("Something went wrong. Please try again or email us directly.");
+    }
+  };
+
+  const resetForm = () => {
+    setStatus("idle");
+    setErrorMessage("");
   };
 
   return (
@@ -40,14 +76,14 @@ export default function ContactForm() {
         >
           <p className="font-mono text-[11px] font-black uppercase tracking-[0.25em] text-foi-light-blue mb-5 flex items-center gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-foi-light-blue animate-pulse" />
-            {"// say hello — the room is listening"}
+            {"// say hello - the room is listening"}
           </p>
           <h2 className="font-heading text-4xl md:text-6xl font-black tracking-tight text-slate-900 leading-[0.95] mb-6">
             Want a seat in{" "}
             <span className="text-shimmer">the room?</span>
           </h2>
           <p className="text-slate-600 font-medium text-lg mb-10 max-w-md">
-            Tell us who you are — student or organizer — and when you plan to
+            Tell us who you are - student or organizer - and when you plan to
             build. We&apos;ll save your spot for the 12-hour hackathon on 3 Oct
             2026.
           </p>
@@ -55,7 +91,7 @@ export default function ContactForm() {
           <div className="space-y-4">
             {[
               { icon: Clock, label: "Hackathon", value: "Sat 3 Oct 2026 · 12 hours" },
-              { icon: MapPin, label: "Venue", value: "Pune · Nerds Room HQ" },
+              { icon: MapPin, label: "Venue", value: "PW IOI Pune, Viman Nagar" },
               { icon: Mail, label: "Write to us", value: "hello@faceofinnovator.in" },
             ].map(({ icon: Icon, label, value }, i) => (
               <motion.div
@@ -102,16 +138,16 @@ export default function ContactForm() {
             </div>
 
             <AnimatePresence mode="wait">
-              {sent ? (
+              {status === "success" && (
                 <motion.div
-                  key="done"
+                  key="success"
                   className="flex flex-col items-center justify-center text-center px-8 py-24"
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
                 >
                   <motion.div
-                    className="w-20 h-20 rounded-full bg-gradient-foi flex items-center justify-center text-white shadow-[0_16px_32px_rgba(124,143,214,0.4)] mb-6"
+                    className="w-20 h-20 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-[0_16px_32px_rgba(16,185,129,0.4)] mb-6"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.15 }}
@@ -123,16 +159,49 @@ export default function ContactForm() {
                   </h3>
                   <p className="text-slate-600 font-medium max-w-md">
                     Seat reserved for the 12-hour hackathon on 3 Oct 2026. Keep
-                    an eye on your inbox — we&apos;ll ping you with the details.
+                    an eye on your inbox - we&apos;ll ping you with the details.
                   </p>
                   <button
-                    onClick={() => setSent(false)}
+                    onClick={resetForm}
                     className="mt-8 font-mono text-[11px] font-black uppercase tracking-widest text-foi-red hover:underline"
                   >
                     Send another response
                   </button>
                 </motion.div>
-              ) : (
+              )}
+
+              {status === "error" && (
+                <motion.div
+                  key="error"
+                  className="flex flex-col items-center justify-center text-center px-8 py-24"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <motion.div
+                    className="w-20 h-20 rounded-full bg-red-500 flex items-center justify-center text-white shadow-[0_16px_32px_rgba(239,68,68,0.4)] mb-6"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.15 }}
+                  >
+                    <AlertCircle size={34} strokeWidth={3} />
+                  </motion.div>
+                  <h3 className="font-heading font-black text-3xl text-slate-900 mb-2">
+                    Something went wrong
+                  </h3>
+                  <p className="text-slate-600 font-medium max-w-md mb-6">
+                    {errorMessage}
+                  </p>
+                  <button
+                    onClick={resetForm}
+                    className="inline-flex items-center gap-2 rounded-xl bg-foi-red text-white font-heading font-black px-6 py-3"
+                  >
+                    Try again <ArrowRight size={18} />
+                  </button>
+                </motion.div>
+              )}
+
+              {status === "idle" || status === "loading" ? (
                 <motion.form
                   key="form"
                   onSubmit={onSubmit}
@@ -145,6 +214,7 @@ export default function ContactForm() {
                         Full name
                       </span>
                       <input
+                        name="fullName"
                         required
                         placeholder="What do they call you?"
                         className="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3 font-medium text-slate-900 placeholder:text-slate-400 outline-none focus:border-foi-red transition-colors"
@@ -155,6 +225,7 @@ export default function ContactForm() {
                         Email
                       </span>
                       <input
+                        name="email"
                         required
                         type="email"
                         placeholder="you@campus.edu"
@@ -183,6 +254,7 @@ export default function ContactForm() {
                         </button>
                       ))}
                     </div>
+                    <input type="hidden" name="role" value={role} />
                   </div>
 
                   <div>
@@ -205,6 +277,7 @@ export default function ContactForm() {
                         </button>
                       ))}
                     </div>
+                    <input type="hidden" name="slot" value={slot} />
                   </div>
 
                   <label className="block">
@@ -212,20 +285,38 @@ export default function ContactForm() {
                       What are you building? (optional)
                     </span>
                     <textarea
+                      name="project"
                       rows={3}
                       placeholder="A hack idea, a dream project, or 'I'll know when I get there.'"
                       className="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3 font-medium text-slate-900 placeholder:text-slate-400 outline-none focus:border-foi-red transition-colors resize-none"
                     />
                   </label>
 
+                  <input type="hidden" name="utm_source" value={getUTMParams().utm_source || ""} className="utm-field" />
+                  <input type="hidden" name="utm_medium" value={getUTMParams().utm_medium || ""} className="utm-field" />
+                  <input type="hidden" name="utm_campaign" value={getUTMParams().utm_campaign || ""} className="utm-field" />
+                  <input type="hidden" name="utm_content" value={getUTMParams().utm_content || ""} className="utm-field" />
+                  <input type="hidden" name="utm_term" value={getUTMParams().utm_term || ""} className="utm-field" />
+                  <input type="hidden" name="referrer" value={typeof document !== "undefined" ? document.referrer : ""} className="utm-field" />
+
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-foi text-[#0b0a11] font-heading font-black text-base px-8 py-4 shadow-[6px_6px_0_rgba(124,143,214,0.3)] hover:shadow-[2px_2px_0_rgba(124,143,214,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+                    disabled={status === "loading"}
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-foi text-[#0b0a11] font-heading font-black text-base px-8 py-4 shadow-[6px_6px_0_rgba(124,143,214,0.3)] hover:shadow-[2px_2px_0_rgba(124,143,214,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Reserve my seat <ArrowRight size={18} />
+                    {status === "loading" ? (
+                      <>
+                        <Loader2 size={18} className="animate-spin" />
+                        Reserving...
+                      </>
+                    ) : (
+                      <>
+                        Reserve my seat <ArrowRight size={18} />
+                      </>
+                    )}
                   </button>
                 </motion.form>
-              )}
+              ) : null}
             </AnimatePresence>
           </div>
         </motion.div>

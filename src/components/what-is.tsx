@@ -46,7 +46,7 @@ export default function WhatIs() {
                 Innovator<span className="text-foi-yellow">?</span>
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed max-w-md">
-                Not just a community — a movement to empower the next generation
+                Not just a community - a movement to empower the next generation
                 of builders in Pune. We believe in learning by doing, breaking
                 things, and collaborating to build what actually matters.
               </p>
@@ -155,7 +155,7 @@ function QuoteMark() {
       className="relative mb-4 font-heading font-black text-6xl leading-none text-white/70"
       aria-hidden="true"
     >
-      &ldquo;
+      &quot;
     </span>
   );
 }

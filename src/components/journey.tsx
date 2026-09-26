@@ -16,7 +16,7 @@ const phases = [
     number: "02",
     title: "Show Up & Network",
     description:
-      "Attend meetups, hack nights, and workshops. Meet your people — co-founders included.",
+      "Attend meetups, hack nights, and workshops. Meet your people - co-founders included.",
     tag: "Show up",
     dot: "bg-foi-blue",
     glow: "from-foi-blue/40",
@@ -61,7 +61,7 @@ export default function Journey() {
                 Journey.
               </h2>
               <p className="text-lg text-slate-600 font-medium max-w-sm">
-                From your first meetup to leading the community — here&apos;s how it
+                From your first meetup to leading the community - here&apos;s how it
                 works.
               </p>
             </motion.div>

@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "Who can join the community?",
     answer:
-      "Any student or recent graduate who is passionate about building can join. No grades, no experience requirements — just curiosity and drive.",
+      "Any student or recent graduate who is passionate about building can join. No grades, no experience requirements - just curiosity and drive.",
   },
   {
     question: "Do I need a team?",
@@ -18,17 +18,17 @@ const faqs = [
   {
     question: "Is Face of Innovator beginner-friendly?",
     answer:
-      "Absolutely. We built FOI for every level — from first-year students writing their first line of code to seasoned open-source contributors.",
+      "Absolutely. We built FOI for every level - from first-year students writing their first line of code to seasoned open-source contributors.",
   },
   {
     question: "Are events online or offline?",
     answer:
-      "Both. Hack nights, meetups, and the Nerds Room x PW IOI Pune collaboration are offline in Pune, while workshops and mentor hours run online.",
+      "Both. Hack nights, meetups, and PW IOI Pune collaboration are offline in Pune, while workshops and mentor hours run online.",
   },
   {
     question: "How much does it cost?",
     answer:
-      "Nothing. Every FOI event is free for students — thanks to our partners and sponsors who believe in the movement.",
+      "Nothing. Every FOI event is free for students - thanks to our partners and sponsors who believe in the movement.",
   },
   {
     question: "Why should I join?",

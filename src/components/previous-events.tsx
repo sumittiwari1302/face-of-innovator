@@ -3,9 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import roomImg from "@/images/home.jpeg";
-import crewImg from "@/images/member-of-foi-hd.png";
-import { Parallax } from "@/components/motion-reveal";
+import roomImg from "@/images/home-hero.png";
+import crewImg from "@/images/gallery.jpeg";
 
 const tiles = [
   {
@@ -90,7 +89,7 @@ export default function PreviousEvents() {
             <span className="text-shimmer">Events</span>
           </h2>
           <p className="text-lg text-slate-600 font-medium">
-            Real nights, real photos — a glimpse into our past meetups and hack
+            Real nights, real photos - a glimpse into our past meetups and hack
             nights. We can&apos;t wait to see what you build next!
           </p>
         </motion.div>
@@ -108,7 +107,6 @@ export default function PreviousEvents() {
               variants={item}
               className={tile.big ? "md:col-span-2 row-span-2" : ""}
             >
-              <Parallax distance={tile.big ? 24 : 40}>
                 <div
                   className="group relative overflow-hidden rounded-3xl shadow-[14px_14px_0_rgba(11,10,17,0.35)] transition-all duration-500 hover:-translate-y-1.5 cursor-pointer border border-white/10"
                   style={{ transform: `rotate(${tile.rotate}deg)` }}
@@ -148,7 +146,6 @@ export default function PreviousEvents() {
                     </span>
                   </div>
                 </div>
-              </Parallax>
             </motion.div>
           ))}
         </motion.div>

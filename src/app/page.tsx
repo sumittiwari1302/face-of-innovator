@@ -21,7 +21,7 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col bg-white">
+    <main id="main-content" className="flex flex-col bg-white">
       <SiteNav />
       <Hero />
       <UpcomingEvent />

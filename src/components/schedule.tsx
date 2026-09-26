@@ -6,10 +6,10 @@ import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const items = [
-  { time: "09:00 AM", title: "Check-in & Coffee", detail: "Grab your badge, claim a seat, and high-five the crew — coffee is on us." },
+  { time: "09:00 AM", title: "Check-in & Coffee", detail: "Grab your badge, claim a seat, and high-five the crew - coffee is on us." },
   { time: "09:45 AM", title: "Opening Ceremony", detail: "The FOI stage lights up: what's broken, what we're shipping, and how to win." },
   { time: "10:30 AM", title: "Team Formation", detail: "Pitch your idea in 60 seconds or board a team that needs your skill." },
-  { time: "11:00 AM", title: "Build Begins", detail: "Repo created, caffeine loaded. Zero lectures — all shipping." },
+  { time: "11:00 AM", title: "Build Begins", detail: "Repo created, caffeine loaded. Zero lectures - all shipping." },
   { time: "01:00 PM", title: "Lunch Break", detail: "Fuel up and network with mentors and fellow builders." },
   { time: "03:00 PM", title: "Mentor Round", detail: "Industry engineers roam the floor. Breakpoints get unblocked, fast." },
   { time: "05:30 PM", title: "Demo Rehearsal", detail: "Tighten your pitch and make sure the demo can't fail." },
@@ -39,7 +39,7 @@ export default function Schedule() {
             <span className="text-shimmer">The</span> Schedule
           </h2>
           <p className="text-lg text-slate-600 font-medium">
-            Hackathon day 1 — every time slot mapped so you know exactly what
+            Hackathon day 1 - every time slot mapped so you know exactly what
             to expect.
           </p>
         </motion.div>

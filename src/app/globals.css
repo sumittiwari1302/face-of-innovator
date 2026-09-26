@@ -3,15 +3,29 @@
 :root {
   --background: #0b0a11;
   --foreground: #d7d9ec;
-  --foi-blue: #2b2c48;
-  --foi-red: #7c8fd6;
-  --foi-yellow: #d6d2dd;
-  --foi-light-blue: #86a2e6;
-  --foi-fuchsia: #9a8fc4;
-  --foi-gradient: linear-gradient(110deg, #7c8fd6, #9a8fc4, #86a2e6);
+  --foi-blue: #1a1b2e;
+  --foi-red: #e85d5d;
+  --foi-yellow: #f5c542;
+  --foi-light-blue: #3b82f6;
+  --foi-fuchsia: #a855f7;
+  --foi-gradient: linear-gradient(110deg, #e85d5d, #a855f7, #3b82f6);
   --glass: rgba(21, 20, 29, 0.72);
   --glass-border: rgba(255, 255, 255, 0.1);
   color-scheme: dark;
+}
+
+.light {
+  --background: #ffffff;
+  --foreground: #1a1b2e;
+  --foi-blue: #1a1b2e;
+  --foi-red: #e85d5d;
+  --foi-yellow: #f5c542;
+  --foi-light-blue: #3b82f6;
+  --foi-fuchsia: #a855f7;
+  --foi-gradient: linear-gradient(110deg, #e85d5d, #a855f7, #3b82f6);
+  --glass: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  color-scheme: light;
 }
 
 @theme inline {
@@ -33,13 +47,21 @@ html {
 
 body {
   background:
-    radial-gradient(60rem 45rem at -8% -6%, rgba(154, 143, 196, 0.2), transparent 60%),
-    radial-gradient(55rem 40rem at 106% -4%, rgba(134, 162, 230, 0.16), transparent 55%),
-    radial-gradient(50rem 38rem at 50% 118%, rgba(123, 128, 156, 0.14), transparent 62%),
+    radial-gradient(60rem 45rem at -8% -6%, rgba(168, 85, 247, 0.15), transparent 60%),
+    radial-gradient(55rem 40rem at 106% -4%, rgba(59, 130, 246, 0.12), transparent 55%),
+    radial-gradient(50rem 38rem at 50% 118%, rgba(232, 93, 93, 0.1), transparent 62%),
     var(--background);
   color: var(--foreground);
   font-family: var(--font-inter);
   overflow-x: hidden;
+}
+
+.light body {
+  background:
+    radial-gradient(60rem 45rem at -8% -6%, rgba(168, 85, 247, 0.08), transparent 60%),
+    radial-gradient(55rem 40rem at 106% -4%, rgba(59, 130, 246, 0.06), transparent 55%),
+    radial-gradient(50rem 38rem at 50% 118%, rgba(232, 93, 93, 0.05), transparent 62%),
+    var(--background);
 }
 
 /* Thin blueprint grid that fades out toward the bottom (summerofcode-style) */
@@ -58,9 +80,22 @@ body::before {
   -webkit-mask-image: linear-gradient(#000, rgba(0, 0, 0, 0.55) 55%, transparent 92%);
 }
 
+.light body::before {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  mask-image: linear-gradient(#fff, rgba(255, 255, 255, 0.55) 55%, transparent 92%);
+  -webkit-mask-image: linear-gradient(#fff, rgba(255, 255, 255, 0.55) 55%, transparent 92%);
+}
+
 ::selection {
   background: var(--foi-red);
   color: #0b0a11;
+}
+
+.light ::selection {
+  background: var(--foi-red);
+  color: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -69,6 +104,10 @@ body::before {
 
 ::-webkit-scrollbar-track {
   background: #14131c;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f0f0f0;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -246,39 +285,6 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Ambient glow orbs (summerofcode-style drifting lights) */
-.ambient-orb {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(56px);
-  will-change: transform;
-  animation: ambient-float 12s ease-in-out infinite;
-}
-
-.ambient-orb-alt {
-  animation: ambient-drift 16s ease-in-out infinite;
-}
-
-@keyframes ambient-float {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translateY(-14px) scale(1.03);
-  }
-}
-
-@keyframes ambient-drift {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-18px, 12px);
-  }
-}
-
 /* ---------- Blueprint grid overlay ---------- */
 
 .aurora {
@@ -321,8 +327,8 @@ body::before {
   background: conic-gradient(
     from 0deg at var(--mx, 50%) var(--my, 50%),
     transparent 0deg,
-    rgba(154, 143, 196, 0.22) 90deg,
-    rgba(134, 162, 230, 0.22) 140deg,
+    rgba(168, 85, 247, 0.22) 90deg,
+    rgba(59, 130, 246, 0.22) 140deg,
     transparent 200deg
   );
   transition: opacity 0.3s ease;
@@ -503,9 +509,9 @@ body::before {
   background: linear-gradient(
     to right,
     transparent,
-    rgba(124, 143, 214, 0.16) 38%,
-    rgba(214, 210, 221, 0.22) 50%,
-    rgba(134, 162, 230, 0.16) 62%,
+    rgba(232, 93, 93, 0.16) 38%,
+    rgba(168, 85, 247, 0.22) 50%,
+    rgba(59, 130, 246, 0.16) 62%,
     transparent
   );
   filter: blur(10px);
@@ -549,81 +555,159 @@ body::before {
    The original UI was built light-first. These scoped rules re-map the
    light surface/text utilities onto the dark, image-matched palette. */
 
-body .bg-white {
+:not(.light) body .bg-white {
   background-color: #15141d;
 }
 
-body .bg-slate-50 {
+:not(.light) body .bg-slate-50 {
   background-color: #101019;
 }
 
-body .bg-slate-100 {
+:not(.light) body .bg-slate-100 {
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-body .bg-slate-200 {
+:not(.light) body .bg-slate-200 {
   background-color: rgba(255, 255, 255, 0.14);
 }
 
-body .bg-slate-300 {
+:not(.light) body .bg-slate-300 {
   background-color: rgba(255, 255, 255, 0.18);
 }
 
-body .text-slate-900 {
+:not(.light) body .text-slate-900 {
   color: #eef0fa;
 }
 
-body .text-slate-700 {
+:not(.light) body .text-slate-700 {
   color: #c7cbe2;
 }
 
-body .text-slate-600 {
+:not(.light) body .text-slate-600 {
   color: #a9aec9;
 }
 
-body .text-slate-500 {
+:not(.light) body .text-slate-500 {
   color: #8f94b0;
 }
 
-body .text-slate-400 {
+:not(.light) body .text-slate-400 {
   color: #7b809c;
 }
 
-body .text-slate-300 {
+:not(.light) body .text-slate-300 {
   color: #5f6379;
 }
 
-body .text-slate-200 {
+:not(.light) body .text-slate-200 {
   color: #7b809c;
 }
 
-body .text-slate-100 {
+:not(.light) body .text-slate-100 {
   color: rgba(255, 255, 255, 0.1);
 }
 
-body .border-slate-900 {
+:not(.light) body .border-slate-900 {
   border-color: rgba(255, 255, 255, 0.22);
 }
 
-body .border-slate-200 {
+:not(.light) body .border-slate-200 {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-body .border-slate-100 {
+:not(.light) body .border-slate-100 {
   border-color: rgba(255, 255, 255, 0.07);
 }
 
-body .border-slate-300 {
+:not(.light) body .border-slate-300 {
   border-color: rgba(255, 255, 255, 0.16);
 }
 
-body .text-foi-blue {
+:not(.light) body .text-foi-blue {
   color: #b7c2ea;
 }
 
-body .bg-foi-yellow.text-slate-900,
-body .bg-foi-yellow.text-foi-blue {
+:not(.light) body .bg-foi-yellow.text-slate-900,
+:not(.light) body .bg-foi-yellow.text-foi-blue {
   color: #1b1a21;
+}
+
+/* Light mode overrides */
+.light body .bg-white {
+  background-color: #ffffff;
+}
+
+.light body .bg-slate-50 {
+  background-color: #f8fafc;
+}
+
+.light body .bg-slate-100 {
+  background-color: #f1f5f9;
+}
+
+.light body .bg-slate-200 {
+  background-color: #e2e8f0;
+}
+
+.light body .bg-slate-300 {
+  background-color: #cbd5e1;
+}
+
+.light body .text-slate-900 {
+  color: #0f172a;
+}
+
+.light body .text-slate-700 {
+  color: #334155;
+}
+
+.light body .text-slate-600 {
+  color: #475569;
+}
+
+.light body .text-slate-500 {
+  color: #64748b;
+}
+
+.light body .text-slate-400 {
+  color: #94a3b8;
+}
+
+.light body .text-slate-300 {
+  color: #cbd5e1;
+}
+
+.light body .text-slate-200 {
+  color: #e2e8f0;
+}
+
+.light body .text-slate-100 {
+  color: #f1f5f9;
+}
+
+.light body .border-slate-900 {
+  border-color: #0f172a;
+}
+
+.light body .border-slate-200 {
+  border-color: #e2e8f0;
+}
+
+.light body .border-slate-100 {
+  border-color: #f1f5f9;
+}
+
+.light body .border-slate-300 {
+  border-color: #cbd5e1;
+}
+
+.light body .text-foi-blue {
+  color: #1a1b2e;
+}
+
+.light body .bg-foi-yellow.text-slate-900,
+.light body .bg-foi-yellow.text-foi-blue {
+  color: #1a1b2e;
 }
 
 /* ---------- Reduced motion ---------- */
@@ -637,4 +721,421 @@ body .bg-foi-yellow.text-foi-blue {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---------- Print stylesheet ---------- */
+
+@media print {
+  .noise,
+  .scroll-progress,
+  header,
+  footer,
+  .fixed,
+  .sticky,
+  button,
+  a[href^="#"],
+  .cookie-banner,
+  .back-to-top,
+  .floating-contact,
+  .site-search {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  main {
+    display: block !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  .glass,
+  .bg-white,
+  .bg-slate-50,
+  .bg-slate-100 {
+    background: white !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+  }
+
+  .text-white,
+  .text-slate-900 {
+    color: black !important;
+  }
+
+  .text-slate-600,
+  .text-slate-700 {
+    color: #333 !important;
+  }
+
+  .bg-gradient-foi,
+  .text-shimmer {
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    color: black !important;
+  }
+}
+
+/* ---------- Enhanced hover states ---------- */
+
+@media (hover: hover) and (pointer: fine) {
+  a:not(.button):hover,
+  button:hover,
+  [role="button"]:hover {
+    transition: all 0.2s ease;
+  }
+
+  .glass:hover {
+    border-color: rgba(232, 93, 93, 0.3);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.3),
+      0 24px 48px -32px rgba(232, 93, 93, 0.15);
+  }
+
+  .light .glass:hover {
+    border-color: rgba(232, 93, 93, 0.4);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.1),
+      0 24px 48px -32px rgba(232, 93, 93, 0.1);
+  }
+
+  img:hover {
+    transition: transform 0.3s ease;
+  }
+
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+  }
+
+  .group:hover .group-hover\:rotate-6 {
+    transform: rotate(6deg);
+  }
+
+  .group:hover .group-hover\:translate-x-0\.5 {
+    transform: translateX(0.125rem);
+  }
+
+  .group:hover .group-hover\:-translate-y-0\.5 {
+    transform: translateY(-0.125rem);
+  }
+
+  .group:hover .group-hover\:translate-y-0 {
+    transform: translateY(0);
+  }
+
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+}
+
+/* ---------- Loading animations ---------- */
+
+@keyframes skeleton {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.08) 25%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+.light .skeleton {
+  background: linear-gradient(
+    90deg,
+    #e2e8f0 25%,
+    #f1f5f9 50%,
+    #e2e8f0 75%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* ---------- Copy button ---------- */
+
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.375rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  transition: color 0.2s;
+  opacity: 0;
+}
+
+.group:hover .copy-button {
+  opacity: 1;
+}
+
+.copy-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #64748b;
+}
+
+.light .copy-button {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.light .copy-button:hover {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+.copy-button.copied {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.light .copy-button.copied {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+/* ---------- Password visibility toggle ---------- */
+
+.password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.25rem;
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+
+.password-toggle:hover {
+  color: #475569;
+}
+
+.light .password-toggle:hover {
+  color: #334155;
+}
+
+/* ---------- UTM tracking hidden fields ---------- */
+
+.utm-field {
+  display: none;
+}
+
+/* ---------- Form success/error states ---------- */
+
+.form-message {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.form-message.success {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.dark .form-message.success {
+  background-color: rgba(22, 163, 74, 0.1);
+  color: #6ee7b7;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.form-message.error {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.dark .form-message.error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.form-message.info {
+  background-color: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.dark .form-message.info {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* ---------- Confirmation modal ---------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-content {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 51;
+  width: 100%;
+  max-width: 28rem;
+  background-color: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: scaleIn 0.3s ease-out;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  color: #94a3b8;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.modal-close:hover {
+  color: #475569;
+  background-color: #f1f5f9;
+}
+
+.dark .modal-close:hover {
+  color: #e2e8f0;
+  background-color: #1e293b;
+}
+
+/* ---------- Last updated date ---------- */
+
+.last-updated {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  font-family: var(--font-mono);
+}
+
+.dark .last-updated {
+  color: #94a3b8;
+}
+
+/* ---------- Sticky header enhancements ---------- */
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+/* ---------- Focus visible improvements ---------- */
+
+*:focus-visible {
+  outline: none;
+  ring: 2px solid var(--foi-red);
+  ring-offset: 2px;
 }
